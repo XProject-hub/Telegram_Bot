@@ -23,7 +23,7 @@ This project contains a Telegram bot that listens to a source Telegram group and
 ### 1. Clone the Repository
 
 Clone this repository to your local machine or server:
-```bash
+bash
 git clone https://github.com/XProject-hub/Telegram_Bot.git
 cd Telegram_Bot
 
@@ -34,13 +34,13 @@ Operating System: Linux (Ubuntu is recommended)
 Python: 3.6 or later
 pip: Python package installer
 Update your package list and install Python & pip:
-```bash
+
 sudo apt update
 sudo apt install python3 python3-pip -y
 
 3. (Optional) Set Up a Virtual Environment
 Using a virtual environment is recommended. In the repository folder, run:
-```bash
+
 python3 -m venv venv
 source venv/bin/activate
 
@@ -48,7 +48,7 @@ Your prompt should now begin with (venv).
 
 4. Install the Required Python Package
 Install the legacy version of python-telegram-bot (v13.15):
-```bash
+
 pip install --force-reinstall python-telegram-bot==13.15
 
 
@@ -69,7 +69,7 @@ If needed, adjust the file telegram_bot.service (e.g., change the paths or the u
 
 Running the Bot
 To test the bot locally, simply run:
-```bash
+
 python3 telegram_bot.py
 
 You should see logging messages indicating that the bot is running and processing messages from the source group.
@@ -80,32 +80,32 @@ To keep your bot running continuously—even after you close your SSH session or
 
 1. Move the Service File
 Copy the provided telegram_bot.service file to the systemd directory:
-```bash
+
 sudo cp telegram_bot.service /etc/systemd/system/
 
 2. Reload and Enable the Service
 Reload systemd to recognize the new service:
-```bash
+
 sudo systemctl daemon-reload
 
 Enable the service to start automatically on boot:
-```bash
+
 sudo systemctl enable telegram_bot.service
 
 Start the service:
-```bash
+
 sudo systemctl start telegram_bot.service
 
 3. Verify the Service Status
 Check that your service is running:
-```bash
+
 sudo systemctl status telegram_bot.service
 
 
 Usage
 Editing:
 Modify telegram_bot.py as needed. If you update the code, restart the service:
-```bash
+
 sudo systemctl restart telegram_bot.service
 
 Monitoring:
