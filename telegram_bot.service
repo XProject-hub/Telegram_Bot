@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/home/your_username/your_project_folder ### Change Working Directory
+ExecStart=/usr/bin/python3 /home/your_username/your_project_folder/telegram_bot.py ### Change Working Directory
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
